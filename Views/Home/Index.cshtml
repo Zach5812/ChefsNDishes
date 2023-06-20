@@ -1,0 +1,30 @@
+﻿@model List<Chef>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <nav style="flex">
+        <a asp-action="NewChef" asp-controller="Chef">Add a Chef</a>
+        <a asp-action="NewDish" asp-controller="Dish">Add a Dish</a>
+        <a asp-action="ViewDishes" asp-controller="Dish">All Dishes</a>
+    </nav>
+
+    <div>
+        <table style="text-align: center;">
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th># of Dishes</th>
+            </tr>
+            @foreach (Chef chef in Model)
+            {
+                <tr>
+                    <td>@chef.FirstName @chef.LastName</td>
+                    <td id="chef.ChefId">@(DateTime.Now.Year - chef.Birthday.Year)</td>
+                    <td>@chef.CreatedDishes.Count()</td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>

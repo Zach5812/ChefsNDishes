@@ -1,0 +1,15 @@
+@model Chef
+
+<h1>Add a Chef</h1>
+<form asp-action="CreateChef" asp-controller="Chef">
+    <label asp-for="FirstName"></label>
+    <span asp-validation-for="FirstName"></span>
+    <input asp-for="FirstName">
+    <label asp-for="LastName"></label>
+    <span asp-validation-for="LastName"></span>
+    <input asp-for="LastName">
+    <label asp-for="Birthday"></label>
+    <span asp-validation-for="Birthday"></span>
+    <input asp-for="Birthday">
+    <button type="submit">Add Chef</button>
+</form>
